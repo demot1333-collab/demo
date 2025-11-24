@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sakshi Ka Samundar of Love</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+ 
+    @keyframes fall {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h2> 💓 Mine 💓</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="message.html">Sweet Message</a>
+        <a href="quotes.html">Love Clock</a>
+    </nav>
+  </header>
+
+  <section>
+    <h1>💓 Time Since We Started 💓</h1>
+    
+    <div class="quote-box fade-in">
+      <p class="heart-divider">💕💕💕</p>
+      <div class="counter-box">
+        <div class="counter-box">
+            <div class="time">
+              <span id="days">0</span>
+            </div>
+            <div class="time">
+              <span id="hours">0</span>
+            </div>
+            <div class="time">
+              <span id="minutes">0</span>
+            </div>
+            <div class="time">
+              <span id="seconds">0</span>
+            </div>
+          </div>
+      </div>
+      <p class="heart-divider">💗💓💗💓💗</p>
+      <div class="footer-note">
+        And counting every heartbeat we’ve shared since 14 April 2025.<br>
+        <span style="font-size: 1.5rem;">You and me, forever ticking together 💘</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="hearts" id="hearts"></div>
+
+  <button id="musicButton">Play Music 🎵</button>
+  <audio id="bgMusic" loop>
+    <source src="music/Tum Mile Tum Mile Original Motion Picturetrack 128 Kbps.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const startDate = new Date("2025-04-14T00:00:00");
+
+    function updateTime() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      if (diff < 0) return;
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      document.getElementById("days").innerHTML = `${days}<span class="label">Days</span>`;
+      document.getElementById("hours").innerHTML = `${hours}<span class="label">Hours</span>`;
+      document.getElementById("minutes").innerHTML = `${minutes}<span class="label">Minutes</span>`;
+      document.getElementById("seconds").innerHTML = `${seconds}<span class="label">Seconds</span>`;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    const music = document.getElementById("bgMusic");
+    const button = document.getElementById("musicButton");
+
+    button.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        button.textContent = "Pause Music ⏸️";
+      } else {
+        music.pause();
+        button.textContent = "Play Music 🎵";
+      }
+    });
+
+    // Heart animation logic
+    const heartContainer = document.getElementById('hearts');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+      heart.innerText = "💖";
+
+      heartContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+   <script>
+    if (localStorage.getItem("name") != "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

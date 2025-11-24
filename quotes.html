@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Quotes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header>
+    <h2> 💓 Mine 💓</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="message.html">Sweet Message</a>
+      <a href="time.html">Love Clock</a>
+    </nav>
+  </header>
+
+  <section class="quotes-section">
+    <h1>💓Whispers of My Heart💓</h1>
+    <div class="quote-box">
+      <p id="quoteText" class="quote-text">Loading...</p>
+    </div>
+  </section>
+
+  <div class="hearts" id="hearts"></div>
+
+  <button id="musicButton">Play Music 🎵</button>
+  <audio id="bgMusic" loop>
+    <source src="music/Tera Hone Laga Hoon Ajab Prem Ki Ghazab Kahani 128 Kbps.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+  <script>
+    const quotes = [
+      "Meri subha bhi tu hein meri raat bhi tu , jo dil ko chhu Jaye wo baat bhi tu , jo dill ko bhaye wo sath hein tu mere dil ka har ek jasbast bhi tu ... ❤️❤️❤️❤️❤️💕💕💕💕💕☺️☺️☺️",
+      "Mala tujhi aathwan naahi tujhi sath haavi,na sampnari ek pyaari si raat haavi, mala tujhi swapn nahi, tujhi sachi prema chi ghath haavi ❤️❤️❤️❤️❤️❤️🥺🥺🥺🥺🥺💗💗💓💞💕💖",
+      "Sakshi tula nahi mahiti ki tu kiti imp aahe mazha sathi mi tula khup prem karnar aani mi tula khup khushi pan denar tu mala hi chance deshil ka 💓💓💓💓💓💓❣️❣️❣️💖💖💖💖💖💗💗💗",
+      "tu maza jiv aahe maza jivna sathi tu dila chi dhadkan aahe tu maza sathi mazi khushi cha aadhar aahe tu mazi life cha sar ahhe 💓💓💓🥺🥺🥺😊",
+      "Loving you is the easiest thing I’ve ever done.💓💓",
+      "💓💓The stars in your eyes outshine the whole universe.💓💓",
+      "Each moment with you is a page in our love story.💓💓",
+      "Mujhe tera din chahiye  mujhe teri raat ☺️☺️☺️☺️☺️ Mujhe achi lagti hein wo har ek baat 💗💞💞❤️ Jo judi ho sirf tere  hi sath ❤️❤️💗❤️❤️ Sochta hu karte rahe hum uhi baat 💗💗💞💞 Kabhi bhi khatam na ho hamara ye sath 💞💗💗🥰🥰🥰🥰"
+    ];
+
+    let index = 0;
+    const quoteText = document.getElementById("quoteText");
+
+    function showQuote() {
+      quoteText.classList.remove("fade-in");
+      void quoteText.offsetWidth; // trigger reflow for re-animation
+      quoteText.innerText = quotes[index];
+      quoteText.classList.add("fade-in");
+      index = (index + 1) % quotes.length;
+    }
+
+    showQuote();
+    setInterval(showQuote, 4000); // change every 4 seconds
+  </script>
+   <script>
+    if (localStorage.getItem("name") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

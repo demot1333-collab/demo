@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sakshi Ka Samundar of Love</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2> 💓 Mine 💓</h2>
+    <nav>
+      <a href="quotes.html">Love Quotes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="message.html">Sweet Message</a>
+      <a href="time.html">Love Clock</a>
+    </nav>
+  </header>
+
+  <section>
+    
+     
+    
+    <h1>
+      💓 Welcome, My love💓
+    </h1>
+    <div class="quote-box">
+    <p class="quote-text fade-in">
+      This is not just a website, my love — it’s a beautifully wrapped piece of my heart.  
+      Every color, every word, every detail speaks only one thing — <strong>I Love You, Sakshi</strong>.  
+      Dive into this space and you’ll feel the depth of my feelings, the warmth of my thoughts, and the magic of our bond.  
+      You are my sunshine after rain, my calm after storm, my every heartbeat.  
+      Welcome to your world — the world where *you are loved beyond imagination* 💗💫
+    </p>
+  </div>
+  </section>
+  
+
+  <div class="hearts" id="hearts"></div>
+  <button id="musicButton">Play Music 🎵</button>
+  <audio id="bgMusic" loop>
+    <source src="music/Itni Si Baat Hain Azhar 128 Kbps.mp3" type="audio/mpeg">
+  </audio>
+  <script src="script.js"></script>
+
+  <script>
+    if (localStorage.getItem("name") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

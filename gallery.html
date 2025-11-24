@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2> 💓 Mine 💓</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="quotes.html">Gallery</a>
+      <a href="message.html">Sweet Message</a>
+      <a href="time.html">Love Clock</a>
+    </nav>
+  </header>
+
+  <section>
+    <h1>💓💓Moments💓💓</h1>
+    <div class="gallery">
+
+      <div class="gallery-item fade">
+        <img src="images/sakshi_photo.jpeg" alt="Couple 1">
+        <div class="caption">❤️ Your smile, my peace.</div>
+      </div>
+
+      <div class="gallery-item fade">
+        <img src="images/Sashi2.jpeg" alt="Couple 2">
+        <div class="caption">❤️ Love you cutie</div>
+      </div>
+
+      <div class="gallery-item fade">
+        <img src="images/sakshi4.jpeg" alt="Couple 4">
+        <div class="caption">❤️ You make my heart bloom.</div>
+      </div>
+
+      <div class="gallery-item fade">
+        <img src="images/we.jpeg" alt="Couple 4">
+        <div class="caption">❤️ Together is our favorite place.</div>
+      </div>/
+
+      <div class="gallery-item fade">
+        <img src="images/we2.jpeg" alt="Couple 4">
+        <div class="caption">❤️ Together we look good</div>
+      </div>
+
+      <div class="gallery-item fade">
+        <img src="images/sakshi6.jpeg" alt="Couple 3">
+        <div class="caption">❤️ Kitni sahi hein.</div>
+        
+      </div>
+
+    </div>
+  </section>
+
+  <div class="hearts" id="hearts"></div>
+  <button id="musicButton">Play Music 🎵</button>
+  <audio id="bgMusic" loop>
+    <source src="music/Te Amo Dum Maaro Dum 128 Kbps.mp3" type="audio/mpeg">
+  </audio>
+  <script src="script.js"></script>
+  <script>
+    if (localStorage.getItem("name") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
